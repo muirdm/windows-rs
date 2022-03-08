@@ -25,6 +25,13 @@ fn gen_sys_interface(def: &TypeDef, gen: &Gen) -> TokenStream {
 
 fn gen_win_interface(def: &TypeDef, gen: &Gen) -> TokenStream {
     let name = gen_type_ident(def, gen);
+
+    if let Some(guid) = disp_interface(def) {
+        let value = gen_guid(&guid, gen);
+        let guid = gen_element_name(&Type::GUID, gen);
+        return quote! { pub const #name: #guid = #value; };
+    }
+
     let is_exclusive = def.is_exclusive();
     let phantoms = gen_phantoms(def, gen);
     let constraints = gen_type_constraints(def, gen);
@@ -74,7 +81,9 @@ fn gen_methods(def: &TypeDef, cfg: &Cfg, gen: &Gen) -> TokenStream {
         match def {
             Type::IUnknown | Type::IInspectable => {}
             Type::TypeDef(def) => {
-                methods.combine(&gen_methods_impl(&def, InterfaceKind::Default, &mut method_names, &mut virtual_names, bases, gen));
+                if def.type_name() != TypeName::IDispatch {
+                    methods.combine(&gen_methods_impl(&def, InterfaceKind::Default, &mut method_names, &mut virtual_names, bases, gen));
+                }
             }
             _ => unimplemented!(),
         }
@@ -200,5 +209,13 @@ fn gen_agile(def: &TypeDef, gen: &Gen) -> TokenStream {
         }
     } else {
         TokenStream::new()
+    }
+}
+
+fn disp_interface(def: &TypeDef) -> Option<GUID> {
+    if def.methods().next().is_none() && def.name().starts_with("Disp") {
+        GUID::from_attributes(def.attributes())
+    } else {
+        None
     }
 }

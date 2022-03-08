@@ -12,7 +12,7 @@ env:
 jobs:
   test:
     name: Test
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     strategy:
       matrix:
@@ -82,6 +82,7 @@ jobs:
         cargo test --target ${{ matrix.target }} -p test_deprecated &&
         cargo test --target ${{ matrix.target }} -p test_does_not_return &&
         cargo test --target ${{ matrix.target }} -p test_enums &&
+        cargo test --target ${{ matrix.target }} -p test_error &&
         cargo test --target ${{ matrix.target }} -p test_handles &&
         cargo test --target ${{ matrix.target }} -p test_helpers &&
         cargo test --target ${{ matrix.target }} -p test_interop &&
