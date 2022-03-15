@@ -31,7 +31,6 @@ pub mod Tpm;
 pub mod WinTrust;
 #[cfg(feature = "Win32_Security_WinWlx")]
 pub mod WinWlx;
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: 'Win32_Security', 'Win32_Foundation'*"]
     #[cfg(feature = "Win32_Foundation")]
