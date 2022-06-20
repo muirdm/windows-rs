@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
     pub fn SnmpCancelMsg(session: isize, reqid: i32) -> u32;

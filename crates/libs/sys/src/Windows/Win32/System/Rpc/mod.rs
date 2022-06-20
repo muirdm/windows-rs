@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
     pub fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: *mut u8) -> RPC_STATUS;

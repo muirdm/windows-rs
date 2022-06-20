@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Media_Multimedia\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

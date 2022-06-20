@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Data_RightsManagement\"`*"]
     pub fn DRMAcquireAdvisories(hlicensestorage: u32, wszlicense: ::windows_sys::core::PCWSTR, wszurl: ::windows_sys::core::PCWSTR, pvcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;

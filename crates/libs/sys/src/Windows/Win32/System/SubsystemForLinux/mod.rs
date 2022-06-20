@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
     pub fn WslConfigureDistribution(distributionname: ::windows_sys::core::PCWSTR, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows_sys::core::HRESULT;

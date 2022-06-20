@@ -1,6 +1,5 @@
 #[cfg(feature = "Win32_System_Memory_NonVolatile")]
 pub mod NonVolatile;
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Memory\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

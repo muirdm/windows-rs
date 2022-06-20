@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetBios\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

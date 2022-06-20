@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
     pub fn ProtectFileToEnterpriseIdentity(fileorfolderpath: ::windows_sys::core::PCWSTR, identity: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT;

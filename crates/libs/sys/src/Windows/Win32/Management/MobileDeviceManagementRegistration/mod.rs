@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Management_MobileDeviceManagementRegistration\"`*"]
     pub fn ApplyLocalManagementSyncML(syncmlrequest: ::windows_sys::core::PCWSTR, syncmlresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;

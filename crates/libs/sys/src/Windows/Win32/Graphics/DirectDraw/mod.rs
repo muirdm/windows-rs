@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
     pub fn DirectDrawCreate(lpguid: *mut ::windows_sys::core::GUID, lplpdd: *mut IDirectDraw, punkouter: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;

@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
     pub fn InitializeXamlDiagnostic(endpointname: ::windows_sys::core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys::core::PCWSTR, wsztapdllname: ::windows_sys::core::PCWSTR, tapclsid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;

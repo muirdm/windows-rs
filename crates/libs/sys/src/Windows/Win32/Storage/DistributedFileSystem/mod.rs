@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_DistributedFileSystem\"`*"]
     pub fn NetDfsAdd(dfsentrypath: ::windows_sys::core::PCWSTR, servername: ::windows_sys::core::PCWSTR, sharename: ::windows_sys::core::PCWSTR, comment: ::windows_sys::core::PCWSTR, flags: u32) -> u32;

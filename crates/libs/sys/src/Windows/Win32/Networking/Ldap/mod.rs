@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Networking_Ldap\"`*"]
     pub fn LdapGetLastError() -> u32;

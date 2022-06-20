@@ -1,4 +1,3 @@
-#[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_P2P\"`*"]
     pub fn DrtClose(hdrt: *const ::core::ffi::c_void);
